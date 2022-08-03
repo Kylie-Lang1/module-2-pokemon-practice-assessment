@@ -64,12 +64,7 @@ function getAllPokemonNames(pokemon) {
  *  checkIfAnyPokemonWeighsLessThan(pokemon, 18);
  *  //> false
  */
-function checkIfAnyPokemonWeighsLessThan(pokemon, weight) { 
-  for (poke of pokemon){
-    if (!poke.weight){
-      poke.weight = 18.1
-    }
-  }
+function checkIfAnyPokemonWeighsLessThan(pokemon, weight = 19) { 
   
   return pokemon.some(poke => {
     return poke.weight < weight
@@ -125,7 +120,9 @@ if (obj === undefined){
  *  filterByType(pokemon, "psychic")
  *  //> []
  */
-function filterByType() {}
+function filterByType(pokemon, genre) {
+  // let objs = 
+}
 
 /**
  * checkMinBaseExperience()
