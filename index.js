@@ -36,7 +36,15 @@ const examplePokemon = require("./pokemon.js");
 ];
  */
 
-function getAllPokemonNames() {}
+function getAllPokemonNames(pokemon) {
+  if (pokemon.length === 1){
+    throw `Error`
+  }
+  return pokemon.map((poke) => {
+    return poke.name
+  })
+
+}
 
 /**
  * checkIfAnyPokemonWeighsLessThan()
@@ -56,7 +64,17 @@ function getAllPokemonNames() {}
  *  checkIfAnyPokemonWeighsLessThan(pokemon, 18);
  *  //> false
  */
-function checkIfAnyPokemonWeighsLessThan() {}
+function checkIfAnyPokemonWeighsLessThan(pokemon, weight) { 
+  for (poke of pokemon){
+    if (!poke.weight){
+      poke.weight = 18.1
+    }
+  }
+  
+  return pokemon.some(poke => {
+    return poke.weight < weight
+  })
+}
 
 /**
  * findByName()
@@ -74,7 +92,14 @@ function checkIfAnyPokemonWeighsLessThan() {}
       // clefable
     };
  */
-function findByName() {}
+function findByName(pokemon, name) {
+  let obj = pokemon.find((poke) => poke.pokeId === name)
+if (obj === undefined){
+  return null
+} else {
+  return obj
+}
+}
 
 /**
  * filterByType()
