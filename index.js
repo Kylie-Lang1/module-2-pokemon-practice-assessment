@@ -121,9 +121,13 @@ if (obj === undefined){
  *  //> []
  */
 function filterByType(pokemon, genre) {
-  // let objs = 
+  // let pokeType = pokemon.filter((poke) => poke.types.length >= 1)
+  // pokeType.forEach(())
+  return pokemon.types.find((type) => type.name === genre)
+  // console.log(pokeType)
 }
 
+// console.log(filterByType(pokemon, 'water'))
 /**
  * checkMinBaseExperience()
  * -----------------------------
